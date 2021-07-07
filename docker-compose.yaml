@@ -1,0 +1,13 @@
+# docker-compose down && docker-compose up --build
+version: '3.8'
+services:
+  module3:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    networks:
+      - module3  
+networks:
+  module3:
+    driver: bridge
