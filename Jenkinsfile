@@ -25,5 +25,14 @@ pipeline {
                 }
             }
         }
+        
+        stage('publish') {
+            steps {
+                script {
+                    env.PRODUCT_SERVICE_TAG = "${env.BUILD_ID}"
+                    kubernetesDeploy(configs: 'deployment.yaml', kubeconfigId: 'kubeconfig')
+                }
+            }
+        }
     }
 }
