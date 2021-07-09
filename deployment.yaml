@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: krenmaksim/module3-jenkins:16          
+          image: krenmaksim/module3-jenkins:$PRODUCT_SERVICE_TAG
           imagePullPolicy: Always
           ports:
             - name: http-server
